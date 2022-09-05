@@ -29,7 +29,7 @@ public class KnowledgeController {
         return knowledgeService.getKnowledgeEntityById(id);
     }
 
-    @PostMapping(value = "/knowledge", consumes = { "*/*" })
+    @PostMapping("/knowledge")
     public void addKnowledge(@RequestBody Knowledge knowledge) {
         knowledgeService.saveOrUpdate(knowledge);
     }
