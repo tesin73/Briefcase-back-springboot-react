@@ -16,7 +16,7 @@ import com.web.portafolios.service.KnowledgeService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "/knw", consumes = "aplication/json")
+@RequestMapping(path = "/knw")
 public class KnowledgeController {
     @Autowired
     KnowledgeService knowledgeService;
@@ -31,7 +31,7 @@ public class KnowledgeController {
         return knowledgeService.getKnowledgeEntityById(id);
     }
 
-    @PostMapping("/knowledge")
+    @PostMapping(value = "/knowledge", consumes = "application/json")
     public void addKnowledge(@RequestBody Knowledge knowledge) {
         knowledgeService.saveOrUpdate(knowledge);
     }

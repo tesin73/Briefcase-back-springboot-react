@@ -2,15 +2,17 @@ package com.web.portafolios.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 
 @Entity
 @Table
 public class Knowledge {
     @Id
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column
@@ -21,6 +23,17 @@ public class Knowledge {
 
     @Column
     private String content;
+
+    @Column
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;
